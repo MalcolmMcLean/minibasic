@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Created on 29-Apr-2006 00:08:52 -->
+
+<html>
+   <head>
+      <title>
+         MiniBasic Program 7
+      </title>
+      <meta name="GENERATOR" content="Arachnophilia 5.2">
+      <meta name="FORMATTER" content="Arachnophilia 5.2">
+   </head>
+
+   <body bgcolor="#C0C0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
+      <H2> The seventh program. </H2>
+<P>
+We are now ready to put everything together. MiniBasic has facilities
+ for input, output, mathematical and lexical calculation, flow control,
+  and multi-dimensional arrays.
+  <P>
+
+String handling may be different to what you are used to in other versions
+ of BASIC. In MiniBasic all functions that return a string end with the
+  character ‘$’. These include CHR$(), STR$(), LEFT$(), RIGHT$(), MID$() 
+  and STRING$(). There is no limit to string length other than the 
+  computer’s memory. 
+<P>
+
+Some functions take a string argument, but return a numerical variable.
+ These include LEN(), the length of the string, and ASCII() – the 
+ ASCII code of the first character of the string, also VAL() – the 
+ numerical value of string of digits. Internally, the NUL character,
+  ASCII value 0, is used to terminate strings. The empty string “” 
+  consists of a single NUL.
+<P>
+
+Here is a program which inputs a full name, checks for validity, and
+ stores it in an array of variables.
+<P>
+<code>
+10 REM String-handling program <BR>
+20 REM Inputs a name, tests for validity <BR>
+30 REM and breaks up into parts. <BR>
+40 PRINT "Enter your full name" <BR>
+50 INPUT name$ <BR>
+<BR>
+60 REM First check for non-English characters <BR>
+70 LET flag = 0 <BR>
+80 FOR I = 1 TO LEN(name$) <BR>
+90 LET ch$ = MID$(name$, I,1) <BR>
+100 IF (ch$ &gt= "A" AND ch$ &lt= "z") OR ch$ = " " THEN 140 <BR>
+110 LET flag = 1 <BR>
+120 REM This forces the loop to stop <BR>
+130 LET I = LEN(name$) <BR>
+140 NEXT I <BR>
+150 IF flag = 0 THEN 180 <BR>
+160 PRINT "Non-English letter,", ch$ <BR>
+170 GOTO 40 <BR>
+<BR>
+180 REM Jump to subroutine <BR>
+190 LET return = 210 <BR>
+200 GOTO 1000 <BR>
+210 IF name$ = "" THEN 280 <BR>
+220 LET return = 240 <BR>
+230 GOTO 2000 <BR>
+240 LET N = N + 1 <BR>
+250 DIM out$(N) <BR>
+260 LET out$(N) = word$ <BR>
+270 GOTO 180 <BR>
+<BR>
+280 REM Print out the name <BR>
+285 PRINT "Name accepted" <BR>
+290 FOR I = 1 TO N <BR>
+300 PRINT out$(I) + " "; <BR>
+310 NEXT I <BR>
+320 PRINT "" <BR>
+330 GOTO 3000 <BR>
+<BR>
+1000 REM strips the leading space <BR>
+1010 IF LEFT$(name$, 1) &lt&gt " " THEN return <BR>
+1020 LET name$ = MID$(name$, 2, -1) <BR>
+1030 GOTO 1010 <BR.
+<BR>
+2000 REM get the leading word and put it in word$ <BR>
+2010 LET word$ = "" <BR>
+2020 LET ch$ = LEFT$(name$, 1) <BR>
+2030 IF ch$ &lt "A" OR ch$ &gt "z" THEN return <BR>
+2040 LET word$ = word$ + ch$ <BR>
+2050 LET name$ = MID$(name$, 2, -1) <BR>
+2060 GOTO 2020 <BR>
+<BR>
+3000 REM END <BR>
+</code>
+
+   </body>
+</html>

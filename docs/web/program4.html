@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Created on 28-Apr-2006 23:48:42 -->
+
+<html>
+   <head>
+      <title>
+         MiniBasic program 4
+      </title>
+      <meta name="GENERATOR" content="Arachnophilia 5.2">
+      <meta name="FORMATTER" content="Arachnophilia 5.2">
+   </head>
+
+   <body bgcolor="#C0C0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+		<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
+      <H2> The fourth program. </H2>
+
+Programs often need to make branching decisions. In MiniBasic this 
+is provided by the IF ... THEN statement.
+<P>
+<code>
+10 REM Square root program. <BR>
+20 PRINT “Enter a number” <BR>
+30 INPUT x <BR>
+40 REM Square root of negative is not allowed <BR>
+50 IF x &lt 0 THEN 20 <BR>
+60 PRINT “Square root of”, x, “is”, SQRT(x) <BR>
+</code>
+<P>
+We have also introduced the REM statement. This simply adds comments 
+to make the program easier for a human to understand. REM statements 
+are ignored by the interpreter.
+<P>
+
+This program is actually not very effective. Really we should tell
+ the user what is wrong. For this, we need the GOTO statement. A GOTO
+  simply executes an unconditional jump.
+<P>
+<code>
+10 REM Improved square root program <BR>
+20 PRINT “Enter a number” <BR>
+30 INPUT x <BR>
+40 REM Prompt user if negative <BR>
+50 IF x &gt= 0 THEN 80 <BR>
+60 PRINT “Number may not be negative” <BR>
+70 GOTO 30 <BR>
+80 PRINT “Square root of ”, x, “is”, SQRT(x) <BR>
+</code>
+<P>
+An IF ... THEN statement always takes a line number as an argument. 
+This can be of the form IF x &lt y THEN b, as long as b holds a valid 
+line number.
+<P>
+The operators recognised by the IF ... THEN statement are ‘=’, ‘&lt&gt’ 
+(not equals), ‘&gt’, ‘&lt’, ‘&gt=’, ‘&lt=’.
+<P>
+We can also use AND and OR to build up complex tests
+<P>
+eg <BR>
+<code>
+IF age &gt= 18 AND age &lt 65 THEN x <BR>
+</code>
+<P>
+Use parentheses to disambiguate lengthy tests. <BR> 
+eg <BR>
+<code>
+IF age &gt= 18 AND (age &lt 65 OR job$ = “Caretaker”) <BR>
+</code>
+<P>
+The IF ... THEN operators can also be applied to string variables. 
+In this case the strings are ordered alphabetically.
+<P>
+
+   </body>
+</html>

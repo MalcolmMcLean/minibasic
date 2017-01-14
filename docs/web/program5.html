@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Created on 28-Apr-2006 23:56:01 -->
+
+<html>
+   <head>
+      <title>
+         MiniBasic Program 5
+      </title>
+      <meta name="GENERATOR" content="Arachnophilia 5.2">
+      <meta name="FORMATTER" content="Arachnophilia 5.2">
+   </head>
+
+   <body bgcolor="#C0C0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
+      <H2> The fifth program. </H2>
+<P>
+To enable MiniBasic to compute complicated functions we need access
+ to arbitrary amounts of memory. For this we have the DIM statement.
+  It creates a special type of variable known as an array.
+<P>
+<code>
+10 REM Calendar program. <BR>
+20 DIM months$(12) = "Jan", "Feb", "Mar", "Apr", "May", "Jun", <BR>
+                     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" <BR>
+30 PRINT "Day of birth?" <BR>
+40 INPUT day <BR>
+50 PRINT "Month?" <BR>
+60 INPUT month <BR>
+70 REM Make sure day and month are legal <BR>
+80 IF day &gt= 1 AND day &lt= 31 AND month &gt= 1 AND month &lt= 12 THEN 110 <BR>
+90 PRINT "That's impossible" <BR>
+100 GOTO 30 <BR>
+110 IF day &lt&gt INT(day) OR month &lt&gt INT(month) THEN 90 <BR>
+120 PRINT "Your birthday is", day, months$(month) <BR>
+</code>
+<P>
+You might want to modify this program to contain another array, this
+ time a numerical one, containing the lengths of the months. For the
+  ambitious, you could also input the year, and check for February 29th.
+<P>
+Arrays can have up to five dimensions. For instance you might want to hold
+ a chessboard in a 2d array
+ <P>
+ <code>
+DIM board(8,8) <BR>
+</code>
+
+<P>
+It is possible to redimension arrays. For a 2d or higher array this
+ effectively scrambles the contents, but one dimensional arrays are
+  preserved.
+<P>
+For instance this program will enter an arbitrary number of values into
+ an array
+<P>
+<code>
+10 REM Median program. <BR>
+20 LET N = 0 <BR>
+30 DIM array(N+1) <BR>
+40 PRINT "Enter a number, q to quit" <BR>
+50 INPUT line$ <BR>
+60 IF line$ = "q" THEN 100 <BR>
+70 LET N = N + 1 <BR>
+80 LET array(N) = VAL(line$) <BR>
+90 GOTO 30 <BR>
+100 PRINT N, "numbers entered" <BR>
+105 IF N = 0 THEN 1000 <BR>
+106 IF N =  1 THEN 210 <BR>
+110 REM Bubble sort the numbers <BR>
+120 LET flag = 0 <BR>
+130 LET i = 1 <BR>
+140 IF array(i) &lt= array(i+1) THEN 190 <BR>
+150 LET flag = 1 <BR>
+160 LET temp = array(i) <BR>
+170 LET array(i) = array(i+1) <BR>
+180 LET array(i+1) = temp <BR>
+190 LET i = i + 1 <BR>
+195 IF i &lt N THEN 140 <BR>
+200 IF flag = 1 THEN 120 <BR>
+210 REM print out the middle <BR>
+220 IF N MOD 2 = 0 THEN 250 <BR>
+230 LET mid = array( (N + 1) / 2) <BR>
+240 GOTO 270 <BR>
+250 LET mid = array(N/2) + array(N/2+1) <BR>
+260 LET mid = mid/2 <BR>
+270 PRINT "Median", mid <BR>
+1000 REM end  <BR>
+</code>
+
+   </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Created on 28-Apr-2006 23:38:46 -->
+
+<html>
+   <head>
+      <title>
+         Minibasic program 2
+      </title>
+      <meta name="GENERATOR" content="Arachnophilia 5.2">
+      <meta name="FORMATTER" content="Arachnophilia 5.2">
+   </head>
+
+   <body bgcolor="#c0c0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+		<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
+      <H2> The second program. </H2>
+<P>
+There is very little point in a program that outputs something but has 
+no input. So for our second program we will use the command INPUT.
+<P>
+<code>
+10 PRINT “Input first number “ <BR>
+20 INPUT x <BR>
+30 PRINT “Input second number” <BR>
+40 INPUT y <BR>
+50 PRINT “X + Y is”, x + y <BR>
+</code>
+<P>
+INPUT will get two numbers that you type in the command prompt. 
+It ignores any non-numeric characters, and translates the first 
+number that you see.
+</P>
+The comma separates items to print, and also tells the computer to insert 
+a space.
+<P>
+It is also possible to input strings of characters. To do this, we use 
+what is called a “string variable”. A string variable always ends with 
+the dollar character ($), and contains text rather than numbers.
+<P>
+
+<code>
+10 PRINT “What is your name?” <BR>
+20 INPUT n$ <BR>
+30 PRINT “Hello”, n$ <BR>
+</code>
+<P>
+When inputting a string, INPUT reads up to the newline (which it discards).
+<P>
+We can use the ‘+’ operator, but not any others, on string variables.
+<P>
+<code>
+10 PRINT “What is your first name?” <BR>
+20 INPUT fname$ <BR>
+30 PRINT “What is your second name?” <BR>
+40 INPUT sname$ <BR>
+50 PRINT “Hello”, fname$ + sname$ <BR>
+</code>
+<P>
+Notice that this program has a bug. The ‘+’ operator doesn’t insert a 
+space, so unless you inadvertently added a space the program prints 
+“FREDBLOGGS”. Try modifying the program by inserting a space between 
+the two names.
+<P> 
+
+
+   </body>
+</html>
