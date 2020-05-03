@@ -1796,7 +1796,7 @@ static void *getdimvar(DIMVAR *dv, ...)
 	  break;
 	}
   }
-  else if(dv->type = STRID)
+  else if(dv->type == STRID)
   {
 	switch(dv->ndims)
 	{
@@ -2898,3 +2898,4 @@ static double factorial(double x)
 	answer *= t;
   return answer;
 }
+
