@@ -1,25 +1,35 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE hml>
 
 <!-- Created on 29-Apr-2006 08:48:46 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic statements
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+      <style>
+          BODY {
+             background-color:#e0e0ff;
+             width:50em;
+             margin-left:5em;
+             margin-bottom:5em;
+          }
+    </style>
    </head>
 
-   <body bgcolor="#f0f0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
       <H2> Alphabetical list of keywords. </H2>
 
+<P>
 Each keyword in MiniBasic is listed alphabetically, with a brief description of its function and how to use it.
+</P>
 <P>
 Each entry
+</P>
 <P>
-<font size="+2">e</font> – Euler’s number.
+<font size="+2">e</font> - Euler&apos;s number.
 <P>
 The mathematical constant e, 2.71281828... The base of natural logarithms, and used in many formulae.
 <P>
@@ -30,11 +40,11 @@ e <BR>
 10 LET y = POW(e, -x) <BR>
 </code>
 <hr>
-<font size="+2">ACOS</font> –arc-cosine.
+<font size="+2">ACOS</font> arc-cosine.
 <P>
 
 Calculates the inverse cosine of a number. The result is in radians. 
-Input must be between –1.0 and 1.0.
+Input must be between -1.0 and 1.0.
 <P>
 <B> Usage </B> <BR>
 <code>
@@ -43,7 +53,7 @@ num = ACOS(numeric) <BR>
 10 LET rad = ACOS(x) <BR>
 </code>
 <hr> 
-<font size="+2">AND</font> – logical operator.
+<font size="+2">AND</font> - logical operator.
 <P>
 Used in IF ... THEN statements to perform two tests. If both are true 
 then the test succeeds. Note it cannot be used as a bitwise AND 
@@ -53,31 +63,35 @@ operator, as in some programming languages.
 <code>
 IF relational AND relational THEN numeric <BR>
 <BR>
-10 IF name$ = “Fred” AND age &gt 18 AND age &lt= 65 THEN 100 <BR>
+10 IF name$ = &quot;Fred”=&quot; AND age &gt; 18 AND age &lt; = 65 THEN 100 <BR>
 </code>
 <hr>
-<font size="+2">ACSII</font> – get the numerical code for a character.
+<font size="+2">ACSII</font> - get the numerical code for a character.
 <P>
 
-Calculates the computer’s internal code for the first character in a 
+Calculates the computer&apos;s internal code for the first character in a
 string, or 0 if the empty string is passed. It is useful for performing 
 direct manipulations on the representation, for instance testing for 
 newlines (code 13).
+</P>
 <P>
 <B>Usage</B><BR>
 <code>
 num = ASCII( string ) <BR>
 <BR>
-LET x = ASCII(“*abc”) <BR>
+LET x = ASCII(&quot;*abc&quot;) <BR>
 </code>
 <P>
+<P>
 x now contains the code for an asterisk, or 42.
+</P>
 <hr>
 
-<font size="+2">ASIN </font> –arc-sine.
+<font size="+2">ASIN </font> -arc-sine.
 <P>
 Calculates the inverse sine of a number. The output is in radians. 
-The input must be between –1.0 and 1.0
+The input must be between -1.0 and 1.0
+</P>
 <P>
 <B> Usage </B> <BR>
 </code>
@@ -85,9 +99,10 @@ num = ASIN(numeric) <BR>
 <BR>
 10 LET rad = ASIN(x) <BR>
 </code>
+</P>
 <hr>
 
-<font size="+2">ATAN</font> – arc-tangent
+<font size="+2">ATAN</font> - arc-tangent
 <P>
 Calculates the inverse tangent of a number. The output is in radians. 
 Note that for very extreme values accuracy may be lost.
@@ -98,25 +113,27 @@ num = ATAN(numeric); <BR>
 <BR>
 10 LET rad = ATAN(x) <BR>
 </code>
+</P>
 <hr>
 
 <font size="+2">CHR$</font> - convert ASCII value to a string.
 <P>
-Converts the computer’s internal numerical character code to a 
+Converts the computer&apos;s internal numerical character code to a
 MiniBasic string of one letter. It is useful for performing numerical 
 manipulations with the code. For instance, to insert a newline call 
 CHR$(13).
+</P>
 <P>
 <B> Usage </B> <BR>
 <code>
 str = CHR$(numeric) <BR>
 <BR>
-10 LET X$ = “Line 1” + CHR$(13) + “Line2” <BR>
+10 LET X$ = &quot;Line 1&quot; + CHR$(13) + &quot;Line2&quot; <BR>
 </code>
-X$ now contains “Line 1” and “Line 2” separated by a newline character.
+X$ now contains &quot;Line 1&quot; and &quot;Line 2&quot; separated by a newline character.
 <hr>
 
-<font size="+2">COS </font> – cosine
+<font size="+2">COS </font> - cosine
 <P>
 Calculates the cosine of an angle. The input must be in radians.
 <P>
@@ -126,34 +143,41 @@ num = COS(numeric) <BR>
 <BR>
 10 LET x = COS(degrees/180 * PI) <BR>
 </code>
+</P>
 <hr>
-<font size="+2">DIM </font> – dimension an array.
+<font size="+2">DIM </font> - dimension an array.
 <P>
 Use DIM to create a named list of numbers or strings. This is 
 extremely useful when dealing with large amounts of data. For 
 instance, if you a writing a program for a company with several 
 employees, you can DIM an array to hold all their names.
+</P>
 <P>
 Arrays can have up to five dimensions. In practise, even on modern 
 computers, memory fills up very fast with big arrays, and three 
 dimensions is the maximum recommended.
+</P>
 <P>
 There must be no space between the name of the dimensioned variable 
 and the opening parenthesis.
+</P>
 <P>
 <code>
 10 DIM name$(100) <BR>
 </code>
 Creates an array of 100 names.
-<P>
+</P>
 <code>
 10 DIM map(width, height) <BR>
 </code>
+
 <P>
 Creates a 2d array of width * height entries, maybe representing grid 
 squares on a map.
+</P>
 <P>
-Array elements are in the range 1 – maximum, so
+Array elements are in the range 1 - maximum, so
+</P>
 <P>
 <code>
 20 LET map(1,10) = 2.0 <BR>
@@ -161,19 +185,22 @@ Array elements are in the range 1 – maximum, so
 sets the top left element to 2.0. map(width, height) is the bottom 
 right element. If you try to access out-of-range elements the computer 
 will throw an error.
+</P>
 <P>
 MiniBasic allows you to resize an array at any point by calling DIM 
 on it again. If the array is one-dimensional, elements will be 
 preserved. If the array has higher dimensions then the elements 
 will be scrambled. Resizing an array is useful if, say, you are 
-inputting a list of employee names and don’t know how many there 
+inputting a list of employee names and don&apos;t know how many there
 will be. Arrays of zero dimensions may not be declared.
+</P>
 <P>
 MiniBasic also allows you to initialise arrays when you dimension 
 them. This
+</P>
 <P>
 <code>
-10 DIM days$[7] = “Mon”, “Tue”, “Wed”, “Thur”, “Fri”, “Sat”, “Sun” <BR>
+10 DIM days$[7] = &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thur&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot; <BR>
 </code>
 <P>
 will declare an array of days of the week. This method is useful for 
@@ -181,15 +208,18 @@ defining data. For 2d arrays, the first dimension is the lowest (x)
 dimension, so
 </P>
 <code>
-DIM name$(2, 4) = “Fred”, “Bloggs”, <BR>
-                                 “Joe”, “Sixpack” <BR>
-                                 “Homer”, “Simpson” <BR>
-                                  “John”, “Doe” <BR>
+DIM name$(2, 4) = &quot;Fred&quot;, &quot;Bloggs&quot;, <BR>
+                                 &quot;Joe&quot;, &quot;Sixpack&quot; <BR>
+                                 &quot;Homer&quot;, &quot;Simpson&quot; <BR>
+                                  &quot;John&quot;, &quot;Doe&quot; <BR>
 </code>
+<P>
 is the correct order.
+</p>
 <P>
 Dimensioned variables are intimately connected with FOR ... NEXT loops.  
 Use the loop counter to index into your array.
+</P>
 <P>
 <B> Usage </B> <BR>
 <code>
@@ -243,7 +273,7 @@ For instance
 10 FOR I = 1 TO 10 STEP 2 <BR>
 20 PRINT I <BR>
 30 NEXT I <BR>
-40 FOR I = 10 TO 1 STEP –0.3 <BR>
+40 FOR I = 10 TO 1 STEP -0.3 <BR>
 50 PRINT I <BR>
 60 NEXT I <BR>
 </code>
@@ -264,8 +294,8 @@ In MiniBasic, if the TO value is lower than the initial value
 execute. Control passes to the first matching NEXT.
 <P>
 It is important not to jump out of FOR ... NEXT loops, or get 
-the nesting order wrong, otherwise MiniBasic’s control flow will 
-become confused. The “Too many FORs” error is likely to be caused 
+the nesting order wrong, otherwise MiniBasic&apos;s control flow will
+become confused. The &quot;Too many FORs&quot; error is likely to be caused
 by jumping out of a loop. To terminate a loop prematurely, set 
 the counter to the TO value, and jump to the matching NEXT
 <P>
@@ -277,7 +307,7 @@ NEXT id <BR>
 </code>
 <hr>
 
-<font size="+2">GOTO </font> – unconditional jump
+<font size="+2">GOTO </font> - unconditional jump
 <P>
 GOTO executes a jump to another line. The line number is usually 
 a constant, but GOTO x is supported.
@@ -295,7 +325,7 @@ GOTO numeric <BR>
 <BR>
 </code>
 <hr>
-<font size="+2">IF</font> – conditional jump
+<font size="+2">IF</font> - conditional jump
 <P>
 The IF ... THEN construct allows a MiniBasic program to make decisions.
  It can emulate any other control structure.
@@ -311,24 +341,24 @@ IF y &lt 10 THEN x <BR>
 <P>
 is supported
 <P>
-The relational operators are =, &lt&gt (not equal) , &gt, &gt=, &lt and &lt=. 
-They can be aplied to strings or to numerical expresions.
+The relational operators are =, &lt;&gt; (not equal) , &gt;, &gt;=, &lt; and &lt;=.
+They can be applied to strings or to numerical expresions.
 <P>
 The AND and OR logical operators can also be used. MiniBasic does 
-not perform lazy evaluation – all expressions will be evaluated so 
+not perform lazy evaluation - all expressions will be evaluated so
 all array indices etc must be legal.
 <P>
 <B> Usage </B> <BR>
 <code>
 IF relational THEN numeric <BR>
 <BR>
-10 IF x &lt 10 THEN 100 <BR>
+10 IF x &lt; 10 THEN 100 <BR>
 <BR>
-10 IF a$ &lt&gt “OK” AND a$ &lt&gt “YES” THEN x <BR>
+10 IF a$ &lt;&gt; &quot;OK&quot; AND a$ &lt;&gt; &quot;YES&quot; THEN x <BR>
 </code>
 <hr>
 
-<font size="+2">INPUT </font> – input a number or a string.
+<font size="+2">INPUT </font> - input a number or a string.
 <P>
 To input data, use the INPUT function. In a test environment this 
 will usually be typed by the user, if MiniBasic is a component of 
@@ -363,7 +393,7 @@ INPUT id <BR>
 </code>
 <hr>
 
-<font size="+2">INSTR</font> – in string
+<font size="+2">INSTR</font> - in string
 <P>
 Looks for occurrences of a substring within a string. The first 
 argument is the string to search, the second argument the string 
@@ -374,7 +404,7 @@ of the first occurence.
 For instance
 <P>
 <code>
-x = INSTR(“zigzag”, “zag”, 1) <BR>
+x = INSTR(&quot;zigzag&quot;, &quot;zag&quot;, 1) <BR>
 </code>
 <P>
 will return 4
@@ -383,17 +413,17 @@ It is very useful for string manipulation. For instance, to test
 if the one-character string ch is a digit we could write
 <P>
 <code>
-10 IF INSTR(“0123456789”, ch, 1) &lt&gt 0 THEN 100 <BR>
+10 IF INSTR(&quot;0123456789&quot;, ch, 1) &lt;&gt; 0 THEN 100 <BR>
 </code>
 <P>
 <B> Usage </B> <BR>
 <code>
 num = INSTR(string, string, numeric) <BR>
 <BR>
-10 LET x = INSTR(sentence, “and”, 1) <BR>
+10 LET x = INSTR(sentence, &quot;and&quot;, 1) <BR>
 </code>
 <hr>
-<font size="+2">INT</font> – convert real to integer.
+<font size="+2">INT</font> - convert real to integer.
 <P>
 All MiniBasic numerical variables are stored as floating point. 
 INT() returns the lower integer potion of the number. Thus INT(1.9) 
@@ -422,19 +452,19 @@ string.
 <code>
 str = LEFT$(string, numeric) <BR>
 <BR>
-10 LET hello$ = LEFT$(“Hello World”, 5) <BR>
+10 LET hello$ = LEFT$(&quot;Hello World&quot;, 5) <BR>
 
 </code>
 <hr>
 
-<font size="+2">LEN </font> – returns the length of a string.
+<font size="+2">LEN </font> - returns the length of a string.
 <P>
 To find the length of a string in characters, call LEN(). The empty 
-string “” returns 0. It is often necessary to examine each character 
+string &quot;&quot; returns 0. It is often necessary to examine each character
 of a string for processing.
 <P>
 <code>
-5 REM PRINT A$, omitting the letter “x” <BR>
+5 REM PRINT A$, omitting the letter &quot;x&quot; <BR>
 6 INPUT A$ <BR>
 10 FOR I = 1 TO LEN(A$) <BR>
 20 LET ch$ = MID$(A$, 1, 1) <BR>
@@ -447,17 +477,17 @@ of a string for processing.
 <code>
 num = LEN(string) <BR.
 <BR>
-10 LET x = LEN(“This is a string”) <BR>
+10 LET x = LEN(&quot;This is a string&quot;) <BR>
 </code>
 <hr>
-<font size="+2">LET</font> – assignment
+<font size="+2">LET</font> - assignment
 <P>
 The LET statement assigns a variable a value. If the variable does 
 not exist it is created.
 <P>
 <code>
 10 LET x = 10 <BR>
-10 LET name$ = fname$ + “ “ + sname$ <BR>
+10 LET name$ = fname$ + &quot; &quot; + sname$ <BR>
 </code>
 <P>
 Plain variables like x or length are always numerical, string 
@@ -492,7 +522,7 @@ LET id$ = string <BR>
 10 LET a$ = CHR$(13) <BR>
 </code>
 <hr>
-<font size="+2">LN </font> – natural logarithm
+<font size="+2">LN </font> - natural logarithm
 <P>
 Computes the natural logarithm of a number, which must be greater 
 than zero. Natural logarithms are to the base e.
@@ -507,7 +537,7 @@ To convert to a base 2 logarithm
 <P>
 <code>
 LET log2 = LN(x)/LN(2)
-</code>
+</code><BR>
 <B> Usage </B> <BR>
 <code>
 num = LN(numeric) <BR>
@@ -521,36 +551,36 @@ Use this function to obtain a string from the middle of another
 string.
 <P>
 The first argument is the target string, the second argument the 
-offset (1 – based) and the third argument the length of the substring 
+offset (1 - based) and the third argument the length of the substring
 to extract.
 <P>
 <code> 
-LET x$ = MID$(“Distraction”, 4, 5) <BR>
+LET x$ = MID$(&quot;Distraction&quot;, 4, 5) <BR>
 </code>
 <P>
-sets x$ to “tract”
+sets x$ to &quot;tract&quot;
 <P>
 If the length is too long for the target string, the answer is 
 truncated. 
 <P>
-By passing –1 for the length, we tell the function to extract the 
+By passing -1 for the length, we tell the function to extract the
 remainder of the string.
 <P>
 <code>
-LET x$ = MID$(“Distraction”, 4, -1) <BR>
+LET x$ = MID$(&quot;Distraction&quot;, 4, -1) <BR>
 </code>
 <P>
-sets x$ to “traction”.
+sets x$ to &quot;traction&quot;.
 <P>
 <B> Usage </B> <BR>
 <code>
-str – MID$(string, numeric, numeric) <BR>
+str - MID$(string, numeric, numeric) <BR>
 <BR>
 10 LET x$ = MID$(y$, 3, 4) <BR> 
 10 LET x$ = MID$(y$, 3, -1) <BR>
 </code>
 <hr>
-<font size="+2">MOD </font> – modulus.
+<font size="+2">MOD </font> - modulus.
 <P>
 Modulus is not a function but an arithmetical operator. It calculates 
 the remainder after division.
@@ -571,11 +601,11 @@ MOD also works for fractional values. 0.75 MOD 0.5 equals 0.25
 num = numeric MOD numeric <BR>
 <BR>
 10 LET X = Y MOD 10 <BR>
-10 LET X = Y MOD –0.1 <BR>
+10 LET X = Y MOD -0.1 <BR>
 </code>
 <hr>
 
-<font size="+2">NEXT</font> – terminates a FOR ... NEXT loop
+<font size="+2">NEXT</font> - terminates a FOR ... NEXT loop
 <P>
 For description see FOR
 <P>
@@ -590,12 +620,12 @@ NEXT id
 </code>
 <hr>
 
-<font size="+2">OR</font> – logical operator.
+<font size="+2">OR</font> - logical operator.
 <P>
 Used in IF ... THEN statements to perform both tests. If either one 
 is true, then the test succeeds and the jump is taken.
 <P>
-IF job$ = “caretaker” OR age &lt 65 THEN 100
+IF job$ = &quot;caretaker&quot; OR age &lt; 65 THEN 100
 <P>
 Note that lazy evaluation is not performed. Both sides of the 
 expression will always be evaluated.
@@ -608,13 +638,13 @@ When used in conjunction with AND use parentheses to disambiguate.
 <code>
 IF relational OR relational THEN numeric <BR>
 <BR>
-10 IF x = y OR x = z OR x &lt 0 THEN 100 <BR>
+10 IF x = y OR x = z OR x &lt; 0 THEN 100 <BR>
 </code>
 <Hr>
-<font size="+2">PI</font> – mathematical constant.
+<font size="+2">PI</font> - mathematical constant.
 <P>
 The mathematical constant PI, or 3.14159265... This is the ratio 
-of a circle’s circumference to its diameter and is used in many 
+of a circle&apos;s circumference to its diameter and is used in many
 mathematical formulae
 <P>
 <B> Usage </B> <BR>
@@ -625,7 +655,7 @@ PI <BR>
 <BR>
 </code>
 <hr>
-<font size="+2">POW</font> – exponentiation  function.
+<font size="+2">POW</font> - exponentiation  function.
 <P>
 POW() raises x to the power y. Fractional and negative powers 
 are supported.
@@ -660,16 +690,16 @@ num = POW(numeric, numeric) <BR>
 10 LET a = POW(x,y) <BR>
 </code>
 <hr>
-<font size="+2">PRINT</font> – output statement
+<font size="+2">PRINT</font> - output statement
 <P>
-All of MiniBasic’s output is via the PRINT statement. It is used to 
+All of MiniBasic&apos;s output is via the PRINT statement. It is used to
 print both numbers and strings.
 <P>
 <code>
-PRINT “Hello World”
+PRINT &quot;Hello World&quot;
 </code>
 <P>
-Will output the string “Hello World”, followed by a newline.
+Will output the string &quot;Hello World&quot;, followed by a newline.
 <P>
 <code>
 PRINT x
@@ -681,7 +711,7 @@ It is possible to print many values in one line by separating them
 with commas.
 <P>
 <code>
-PRINT “Your salary is”, x, “Mr” name$
+PRINT&quot;Your salary is&quot;, x, &quot;Mr&quot; name$
 </code>
 <P>
 The comma will automatically insert a space. 
@@ -694,30 +724,30 @@ To suppress the newline, terminate the PRINT statement with a semicolon.
 30 PRINT x; <BR>
 40 PRINT y <BR>
 </code>
-will output the string “1025”
+will output the string &quot;1025&quot;
 <P>
 To print a bare newline, use the empty string
 <P>
 <code>
-10 PRINT “”
+10 PRINT &quot;&quot;
 </code>
 <P>
 <B> Usage </B> <BR>
 <code>
 PRINT numeric or string, numeric or string ; (optional) <BR>
 <BR>
-10 PRINT “Hello World” <BR>
+10 PRINT &quot;Hello World&quot; <BR>
 10 PRINT x <BR> 
-10 PRINT “Hello”, name$ <BR> 
-10 PRINT “Enter your telephone number”; <BR>
-10 PRINT “” <BR>
+10 PRINT &quot;Hello&quot;, name$ <BR>
+10 PRINT &quot;Enter your telephone number&quot;; <BR>
+10 PRINT &quot;&quot; <BR>
 </code>
 <HR>
-<font size="+2">REM </font> – remarks
+<font size="+2">REM </font> - remarks
 <P>
 This statement is purely for adding comments to programs so that a 
 human reader can understand them. It is also frequently used for 
-“commenting out” code – prefixing with a REM so it is not executed.
+&quot;commenting out&quot; code - prefixing with a REM so it is not executed.
 <P>
 MiniBasic allows for multi-line comments, as long as the first 
 character of every continued line is a space.
@@ -731,7 +761,7 @@ REM any comments <BR>
 10 REM This is an extremely long comment, which is spread over two <BR.
       lines. <BR>
 <BR>
-10 REM PRINT “This PRINT statement is commented out” <BR>
+10 REM PRINT &quot;This PRINT statement is commented out&quot; <BR>
 </code>
 <hr>
 
@@ -743,12 +773,12 @@ string.
 For instance
 <P>
 <code>
-LET A$ = RIGHT$(“Beholden”, 3)
+LET A$ = RIGHT$(&quot;Beholden&quot;, 3)
 </code>
 <P>
-Would set A$ to “den”. 
+Would set A$ to = &quot;den&quot;.
 <P>
-If the target string isn’t long enough, all of the string is copied.
+If the target string isn&apos;t long enough, all of the string is copied.
 <P>
 <B> Usage </B> <BR>
 <code>
@@ -757,11 +787,11 @@ str = RIGHT$(string, numeric) <BR>
 10 LET A$ = RIGHT$(B$, 10) <BR>
 </code>
 <hr>
-<font size="+2">RND</font> – Random number generator
+<font size="+2">RND</font> - Random number generator
 <P>
 Many applications need random numbers. RND() provides a pseudo-random 
 number generator. The argument, which should be an integer, tells RND() 
-to generate a random integer in the range 0 to N –1
+to generate a random integer in the range 0 to N -1
 <P>
 <code>
 10 FOR I = 1 TO 100 <BR>
@@ -770,13 +800,13 @@ to generate a random integer in the range 0 to N –1
 </code>
 </P>
 <P>
-will output a stream of random digits in the range 0 – 9. 
+will output a stream of random digits in the range 0 - 9.
 <P>
 If we pass RND() the value 1 the number generated is a floating 
-point value in the range 0 – (slightly below) 1.
+point value in the range 0 - (slightly below) 1.
 <P>
 The random number generator is deterministic. To force a certain 
-behaviour, call RND() with a negative argument. This will “seed” the 
+behaviour, call RND() with a negative argument. This will &quot;seed&quot; the
 random number generator.
 <P>
 LET dummy = RND(-10)
@@ -796,17 +826,17 @@ num = RND(numeric) <BR>
 </code>
 <hr>
 
-<font size="+2">SIN </font> – sine
+<font size="+2">SIN </font> - sine
 <P>
 Returns the sine of a number. The argument must be in radians.
 <P>
-<B> Usage </B>
+<B> Usage </B><BR>
 <code>
 10 LET s = SIN(theta) <BR>
 10 LET s = SIN(degrees/180 * PI) <BR>
 </code>
 <hr>
-<font size="+2">SQRT</font> – square root
+<font size="+2">SQRT</font> - square root
 <P>
 Calcualates the square root of its argument, which must be positive.
 <P>
@@ -815,11 +845,11 @@ Calcualates the square root of its argument, which must be positive.
 num = SQRT(numeric) <BR>
 <BR>
 10 LET root2 = SQRT(2) <BR> 
-10 LET dist = SQRT( (x1-x2) * (x1-x2) + (y1 – y2) * (y1 – y2)) <BR>
+10 LET dist = SQRT( (x1-x2) * (x1-x2) + (y1-y2) * (y1-y2)) <BR>
 </code>
 <hr>
 
-<font size="+2">STEP </font> – increment for a FOR loop.
+<font size="+2">STEP </font> - increment for a FOR loop.
 <P>
 STEP is by default 1, but can be any value, positive or negative. 
 It is evaluated once when the FOR ... NEXT loop is entered. For 
@@ -830,14 +860,14 @@ further details see FOR
 FOR id = numeric TO numeric STEP numeric <BR>
 <BR>
 10 FOR i = 1 TO 100 STEP 10 <BR>
-10 FOR i = 100 TO 1 STEP –1 <BR> 
+10 FOR i = 100 TO 1 STEP -1 <BR>
 10 FOR i = min TO max STEP delta <BR>
 
 </code>
 <hr>
 <font size="+2">STR$</font> - convert numerical value to string.
 <P>
-The numerical value x = 10 and the string value x$ = “10” are two 
+The numerical value x = 10 and the string value x$ = &quot;10&quot; are two
 different things. To convert a number into a human-readable string 
 use STR$
 <P>
@@ -845,17 +875,17 @@ use STR$
 <code>
 str = STR$(numeric) <BR>
 <BR>
-10 LET reg$ = “ABC” + STR$(num) <BR>
+10 LET reg$ = &quot;ABC&quot; + STR$(num) <BR>
 </code>
 <HR>
 
-<font size="+2">STRNG$</font> - tandem string.
+<font size="+2">STRING$</font> - tandem string.
 <P>
 If we need to create a string that consists of a shorter string 
 duplicated many times, use STRING$.
 <P>
 <code>
-LET stars$ = STRING$(“*”, 20)
+LET stars$ = STRING$(&quot;*&quot;, 20)
 </code>
 <P>
 will create a string of twenty asterisks. A common use is creating 
@@ -865,7 +895,7 @@ variable numbers of spaces for output formatting.
 <code>
 str = STRING$(string, numeric) <BR>
 <BR>
-10 PRINT STRING$(“ “, 10), out$ <BR>
+10 PRINT STRING$(&quot; &quot;, 10), out$ <BR>
 </code>
 <hr>
 <font size="+2">TAN</font> - tangent
@@ -881,7 +911,7 @@ num = TAN(numeric) <BR>
 </code>
 <hr>
 
-<font size="+2">THEN </font> – component of IF statement.
+<font size="+2">THEN </font> - component of IF statement.
 <P>
 THEN introduces the jump destination which is taken if the expression 
 in the IF statement is true. The expression is always evaluated, even 
@@ -895,9 +925,9 @@ IF relational THEN numeric
 </code>
 <hr>
  
-<font size="+2">TO</font> – component for FOR ... NEXT loop
+<font size="+2">TO</font> - component for FOR ... NEXT loop
 <P>
-In a FOR ... NEXT loop, TO indroduces the terminal value. When it 
+In a FOR ... NEXT loop, TO introduces the terminal value. When it
 is exceeded, the loop terminates at the next NEXT statement.
 <P>
 For further details see FOR
@@ -907,7 +937,7 @@ For further details see FOR
 FOR id = numeric TO numeric
 </code>
 <hr>
-<font size="+2">VAL</font> – calculate the numerical value of a string.
+<font size="+2">VAL</font> - calculate the numerical value of a string.
 <P>
 This function converts a human-readable string containing numbers to 
 a numerical variable. The string may contain numbers in scientific 
@@ -920,23 +950,23 @@ encountered. If the string does start with a number, 0 is returned
 <code>
 num = VAL(string) <BR>
 <BR>
-10 LET x = VAL(“1024”) <BR> 
-10 LET x = VAL(“1.5e20”) <BR>
+10 LET x = VAL(&quot;1024&quot;) <BR>
+10 LET x = VAL(&quot;1.5e20&quot;) <BR>
 
 </code>
 <hr>
-<font size="+2">VALLEN</font> – length of value
+<font size="+2">VALLEN</font> - length of value
 <P>
 This function is designed for use with VAL() to tell the caller 
 how many numerical characters were translated. This is useful if 
 stepping through a string containing many numbers. It also tells 
-the caller whether a string is numerical or not – if non-numerical 
+the caller whether a string is numerical or not - if non-numerical
 it returns 0.
 <P>
 <code>
 10 INPUT a$ <BR>
-20 IF VALLEN(a$) &lt&gt 0 THEN 50 <BR>
-30 PRINT “You must enter a number” <BR>
+20 IF VALLEN(a$) &lt;&gt; 0 THEN 50 <BR>
+30 PRINT &quot;You must enter a number&quot; <BR>
 40 GOTO 10<BR>
 50 LET x= VAL(a$) <BR>
 60 LET a$ = MID$(VALLEN(A$), -1) <BR>
@@ -949,7 +979,7 @@ input is not entered.
 <code>
 num = VALLEN(string) <BR>
 <BR> 
-10 LET slen = VALLEN(“121 dalmations”) <BR>
+10 LET slen = VALLEN(&quot;121 dalmations&quot;) <BR>
 </code>
 
 

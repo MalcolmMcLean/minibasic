@@ -1,65 +1,81 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 
 <!-- Created on 28-Apr-2006 23:43:44 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic program 3
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+      <style>
+          BODY {
+              background-color:#c0c0ff;
+              width:50em;
+              margin-left:5em;
+              margin-bottom:5em;
+          }
+       </style>
    </head>
 
-   <body bgcolor="#C0C0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 		<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
       <H2> The third program. </H2>
 <P>
-Now we need to get to the core of MiniBasic, the “LET” statement. 
+Now we need to get to the core of MiniBasic, the &quot;LET&quot; statement. 
 MiniBasic will evaluate arbitrarily complicated arithmetical expressions. 
-The operators allowed are the familiar ‘+’ ‘-‘ ‘*’ and ‘/’, and also 
-MOD (modulus). Use parentheses ‘(‘ ‘)’ to disambiguate the order 
+The operators allowed are the familiar &quot;+&quot; &quot;-&quot; &quot;*&quot; and &quot;/&quot;, and also
+MOD (modulus). Use parentheses &quot;(&quot; &quot;)&quot; to disambiguate the order
 of evaluation.
+</P>
 <P>
 <code>
-10 PRINT “Enter temperature in Fahrenheit” <BR>
+10 PRINT &quot;Enter temperature in Fahrenheit&quot; <BR>
 20 INPUT f <BR>
-30 LET c =  (f – 32) / 1.8 <BR>
-40 PRINT “=”, c, “Celsius” <BR>
+30 LET c =  (f - 32) / 1.8 <BR>
+40 PRINT &quot;=&quot;, c, &quot;Celsius&quot; <BR>
 </code>
+</P>
 <P>
 As well as these, there are a large number of mathematical functions
  built into MiniBasic, for example POW(x,y), which does exponentiation,
   SQRT(x) (square root), SIN(x), COS(x) and TAN(x), sine, cosine and 
   tangent. All the trigonometric functions take or return radians. 
    The logarithm function, LN(x), takes a natural logarithm.
+</P>
 <P>
-There are also two mathematical constants, PI and e (Euler’s number).
+There are also two mathematical constants, PI and e (Euler&apos;s number).
  Be careful not to use these as variable names.
+</P>
 <P>
 To convert radians to degrees, divide by 2 * PI and multiply by 360. 
 To convert a natural, base e log to log10, divide by LN(10).
+</P>
 <P>
 LET also works on string variables. String variables always end with
- the character ‘$’, as do string functions.
+ the character &quot;$&quot;, as do string functions.
+</P>
 <P>
 <code>
-10 PRINT “What is your name?” <BR>
+10 PRINT &quot;What is your name?&quot; <BR>
 20 INPUT name$ <BR>
-30 LET name$ = “SIR” + “ “ + name$ <BR>
-40 PRINT “Arise,”, name$ <BR>
+30 LET name$ = &quot;SIR&quot; + &quot; &quot; + name$ <BR>
+40 PRINT &quot;Arise,&quot;, name$ <BR>
 </code>
+</P>
 <P>
-Note that expressions such as
+Note that expressions such as <BR>
 <code>
 LET x = x + 1
 </code>
+</P>
 <P>
 are legal and are in fact very useful.
+</P>
 <P>
-Variable names must be shorter than 31 characters, and mustn’t 
+Variable names must be shorter than 31 characters, and mustn&apos;t
 duplicate any MiniBasic keywords. 
-<P>
+</P>
 
    </body>
 </html>

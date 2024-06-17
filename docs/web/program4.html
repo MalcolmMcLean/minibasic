@@ -1,75 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 
 <!-- Created on 28-Apr-2006 23:48:42 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic program 4
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+      <style>
+          BODY {
+              background-color:#c0c0ff;
+              width:50em;
+              margin-left:5em;
+              margin-bottom:5em;
+          }
+      </style>
    </head>
 
-   <body bgcolor="#C0C0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 		<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
       <H2> The fourth program. </H2>
 
+<P>
 Programs often need to make branching decisions. In MiniBasic this 
 is provided by the IF ... THEN statement.
+</P>
 <P>
 <code>
 10 REM Square root program. <BR>
-20 PRINT “Enter a number” <BR>
+20 PRINT &quot;Enter a number&quot; <BR>
 30 INPUT x <BR>
 40 REM Square root of negative is not allowed <BR>
-50 IF x &lt 0 THEN 20 <BR>
-60 PRINT “Square root of”, x, “is”, SQRT(x) <BR>
+50 IF x &lt; 0 THEN 20 <BR>
+60 PRINT &quot;Square root of&quot;, x, &quot;is&quot;, SQRT(x) <BR>
 </code>
+</P>
 <P>
 We have also introduced the REM statement. This simply adds comments 
 to make the program easier for a human to understand. REM statements 
 are ignored by the interpreter.
+</P>
 <P>
 
 This program is actually not very effective. Really we should tell
  the user what is wrong. For this, we need the GOTO statement. A GOTO
   simply executes an unconditional jump.
+</P>
 <P>
 <code>
 10 REM Improved square root program <BR>
-20 PRINT “Enter a number” <BR>
+20 PRINT &quot;Enter a number&quot; <BR>
 30 INPUT x <BR>
 40 REM Prompt user if negative <BR>
-50 IF x &gt= 0 THEN 80 <BR>
-60 PRINT “Number may not be negative” <BR>
+50 IF x &gt; = 0 THEN 80 <BR>
+60 PRINT &quot;Number may not be negative&quot; <BR>
 70 GOTO 30 <BR>
-80 PRINT “Square root of ”, x, “is”, SQRT(x) <BR>
+80 PRINT &quot;Square root of &quot;, x, &quot;is&quot;, SQRT(x) <BR>
 </code>
+</P>
 <P>
 An IF ... THEN statement always takes a line number as an argument. 
-This can be of the form IF x &lt y THEN b, as long as b holds a valid 
+This can be of the form IF x &lt; y THEN b, as long as b holds a valid
 line number.
+</P>
 <P>
-The operators recognised by the IF ... THEN statement are ‘=’, ‘&lt&gt’ 
-(not equals), ‘&gt’, ‘&lt’, ‘&gt=’, ‘&lt=’.
+The operators recognised by the IF ... THEN statement are &quot;=&quot;, &quot;&lt;&gt;&quot;
+(not equals), &quot;&gt;&quot;, &quot;&lt;&quot;, &quot;&gt;=&quot;, &quot;&lt;=&quot;.
+</P>
 <P>
 We can also use AND and OR to build up complex tests
+</P>
 <P>
 eg <BR>
 <code>
-IF age &gt= 18 AND age &lt 65 THEN x <BR>
+IF age &gt;= 18 AND age &lt; 65 THEN x <BR>
 </code>
+</P>
 <P>
 Use parentheses to disambiguate lengthy tests. <BR> 
-eg <BR>
+e.g. <BR>
 <code>
-IF age &gt= 18 AND (age &lt 65 OR job$ = “Caretaker”) <BR>
+IF age &gt;= 18 AND (age &lt; 65 OR job$ = &quot;Caretaker&quot;) <BR>
 </code>
+</P>
 <P>
 The IF ... THEN operators can also be applied to string variables. 
 In this case the strings are ordered alphabetically.
-<P>
+</P>
 
    </body>
 </html>

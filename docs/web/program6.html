@@ -1,37 +1,48 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 
 <!-- Created on 29-Apr-2006 00:03:43 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic program 6
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+      <style>
+          BODY {
+              background-color:#c0c0ff;
+              width:50em;
+              margin-left:5em;
+              margin-bottom:5em;
+          }
+      </style>
    </head>
 
-   <body bgcolor="#ffffff" text="#C0C000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
       <H2> The sixth program </H2>
 <P>
 It is possible to manipulate arrays of values just using IF ... THEN
  and GOTO, but it soon becomes very clumsy. For this reason MiniBasic
   includes FOR NEXT loops.
+  </P>
 <P>
 Say we want to print out an array
+</P>
 <P>
 <code>
 10 REM Prints the days of the month <BR>
-20 DIM months$(12) = “Jan”, “Feb”, “Mar”, “Apr”, “May”, “Jun”, <BR>
-                     Jul”, “Aug”, “Sep”, “Oct”, “Nov”, “Dec” <BR>
+20 DIM months$(12) = "Jan", "Feb", "Mar", "Apr", "May", "Jun", <BR>
+                     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" <BR>
 30 FOR I = 1 TO 12 <BR>
-40 PRINT Month”, I, months$(I) <BR>
+40 PRINT "Month", I, months$(I) <BR>
 50 NEXT I <BR>
-60 PRINT “Done” <BR>
+60 PRINT "Done" <BR>
 </code>
+</P>
 <P>
 FOR loops can be nested,
+</P>
 <P>
 <code>
 10 FOR I = 1 TO 8 <BR>
@@ -40,37 +51,41 @@ FOR loops can be nested,
 40   NEXT I <BR>
 50 NEXT J <BR>
 </code>
+</P>
 <P>
 It is also possible to provide a STEP value other than one.
 </P>
 <code>
-FOR I = 100 TO 0 STEP –2 <BR>
+FOR I = 100 TO 0 STEP -2 <BR>
 </code>
 <P>
 If you specify a null loop, such as FOR I = 10 TO 0, control will 
 pass over the loop body and go to the next matching NEXT statement. 
 The control variable must always be in the NEXT statement.
+</P>
 <P>
 FOR ... TO loops can take complex expressions, such as FOR I = x TO x * x,
  in these cases the initial value, the end value, and the step value 
  are calculated once and then never modified.
+ </P>
 <P>
 FOR ... NEXT loops can be nested up to 32 deep. If you attempt to jump
  out of a loop then you are likely to trigger errors
+</P>
 <P>
 <code>
 10 REM Bad use of a for loop <BR>
 20 LET X = 0 <BR>
 30 FOR I = 1 TO 10 <BR>
 40 INPUT Y <BR>
-50 IF Y &lt 0 THEN 10 <BR>
+50 IF Y &lt; 0 THEN 10 <BR>
 60 NEXT I <BR>
 </code>
+</P>
 <P>
 However you may alter the counting variable within the loop. This can be
  used to force premature loop termination.
 <P>
-
 
    </body>
 </html>

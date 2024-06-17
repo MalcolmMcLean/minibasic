@@ -1,66 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 
 <!-- Created on 28-Apr-2006 23:38:46 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          Minibasic program 2
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+      <style>
+          BODY {
+              background-color:#c0c0ff;
+              width:50em;
+              margin-left:5em;
+              margin-bottom:5em;
+          }
+    </style>
    </head>
 
-   <body bgcolor="#c0c0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 		<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
       <H2> The second program. </H2>
 <P>
 There is very little point in a program that outputs something but has 
 no input. So for our second program we will use the command INPUT.
+</P>
 <P>
 <code>
-10 PRINT “Input first number “ <BR>
+10 PRINT &quot;Input first number &quot; <BR>
 20 INPUT x <BR>
-30 PRINT “Input second number” <BR>
+30 PRINT &quot;Input second number &quot; <BR>
 40 INPUT y <BR>
-50 PRINT “X + Y is”, x + y <BR>
+50 PRINT &quot;X + Y is&quot;, x + y <BR>
 </code>
 <P>
 INPUT will get two numbers that you type in the command prompt. 
 It ignores any non-numeric characters, and translates the first 
 number that you see.
 </P>
+<P>
 The comma separates items to print, and also tells the computer to insert 
 a space.
+</P>
 <P>
 It is also possible to input strings of characters. To do this, we use 
-what is called a “string variable”. A string variable always ends with 
+what is called a &quot;string variabl&quot;. A string variable always ends with
 the dollar character ($), and contains text rather than numbers.
+</P>
 <P>
-
 <code>
-10 PRINT “What is your name?” <BR>
+10 PRINT &quot;What is your name?&quot; <BR>
 20 INPUT n$ <BR>
-30 PRINT “Hello”, n$ <BR>
+30 PRINT &quot;Hello&quot;, n$ <BR>
 </code>
 <P>
 When inputting a string, INPUT reads up to the newline (which it discards).
+</P>
 <P>
-We can use the ‘+’ operator, but not any others, on string variables.
+We can use the &quot;+&quot; operator, but not any others, on string variables.
+</P>
 <P>
 <code>
-10 PRINT “What is your first name?” <BR>
+10 PRINT&quot;What is your first name?&quot; <BR>
 20 INPUT fname$ <BR>
-30 PRINT “What is your second name?” <BR>
+30 PRINT &quot;What is your second name?&quot; <BR>
 40 INPUT sname$ <BR>
-50 PRINT “Hello”, fname$ + sname$ <BR>
+50 PRINT &quot;Hello&quot;, fname$ + sname$ <BR>
 </code>
+</P>
 <P>
-Notice that this program has a bug. The ‘+’ operator doesn’t insert a 
+Notice that this program has a bug. The &quot;+&quot; operator doesn
+&apos;t insert a
 space, so unless you inadvertently added a space the program prints 
-“FREDBLOGGS”. Try modifying the program by inserting a space between 
+&quot;FREDBLOGGS&quot;. Try modifying the program by inserting a space between
 the two names.
-<P> 
+</P>
 
 
    </body>

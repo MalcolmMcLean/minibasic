@@ -1,157 +1,211 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 
 <!-- Created on 29-Apr-2006 10:24:30 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic errors
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+          <style>
+          BODY {
+              background-color:#e0e0ff;
+              width:50em;
+              margin-left:5em;
+          }
+          </style>
    </head>
 
-   <body bgcolor="#e0eoff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
-      <div align="center"><H2> Errors </H2></div>
+      <H2 style="text-align:center"> Errors </H2>
 
+<P>
 Sometimes MiniBasic will terminate with an error message. Usually these 
-are due to typing mistakes or logic errors in the bASIC program. 
+are due to typing mistakes or logic errors in the BASIC program. 
 Occasionally they may be caused by the computer running out of 
 resources, by illegal input, or by internal errors in the MiniBasic 
 interpreter. 
+</P>
 <P>
-           <b>Can’t read program</b>
+           <b>Can&apos;t read program</b>
+</P>
 <P>
 You have called MiniBasic with something it cannot recognise as a 
 MiniBasic program at all, for instance with a text file containing 
 a nursery rhyme.
+</P>
 <P>
 	<b>Program lines not in order</b>
+</P>
 <P>
 Lines have to be in numerical order. If lines are out of order, you 
 will receive this error.
+</P>
 <P>
 <b>Line not found</b>
+</P>
 <P>
-You have tried to jump to a non-existent line. 
+You have tried to jump to a non-existent line.
+</P>
 <P>
-
 <b>Syntax error line</b>
+</P>
 <P>
 This means that the computer has encountered a line it cannot 
 understand. It is a catch all error, incorporating things such 
 as identifiers starting with digits, or lines not terminated with 
 a newline.
+</P>
 <P> 
 	<b>Out of memory </b>
+</P>
 <P>
 The computer has run out of memory. This may occur when you try to 
 dimension a huge array, or it may occur at any time if the computer 
 is low on resources, since MiniBasic uses memory internally. Be 
-particularly careful when dimensioning arrays with variables.  
+particularly careful when dimensioning arrays with variables.
+</P>
 <P>
 	 <b>Identifier too long </b>
+</P>
 <P>
 An identifier (variable name) is allowed to be only 31 characters long, 
 including the $ for a string identifier. For dimensioned variables the 
 number is one less.
+</P>
 <P>
 	 <b>No such variable </b>
+</P>
 <P>
 You have attempted to use a variable that has not been initialised.
+</P>
 <P>
-
 	  <b>Bad subscript </b>
+</P>
 <P>
 You have tried to access a dimensioned array beyond its dimensioned size.
+</P>
 <P>
 	  <b>Too many dimensions</b>
+</P>
 <P>
 You have tried to dimension an array with more than five dimensions.
+</P>
 <P>
 	  <b>Too many initialisers </b>
+</P>
 <P>
 In initialising a dimensioned array, you have tried to list more 
 values than you have space for.
+</P>
 <P>
-	  <b>Illegal type</b> 
+	  <b>Illegal type</b>
+</P>
 <P>
 You have tried to use a string variable as the counter for a for loop
+</P>
 <P>
 	  <b>Too many nested fors line</b>
+</P>
 <P>
 Maximum depth of FOR .. NEXT loops is 32. Exceeding this limit is 
 probably due to problems with jumping out of FOR ... NEXT loops.
+</P>
 <P>
 	  <b>For without matching next</b>
+</P>
 <P>
 You have declared a FOR statement but not a matching NEXT
+</P>
 <P>
 	  <b>Next without matching for</b>
+</P>
 <P>
 You have declared a NEXT statement without a matching FOR
+</P>
 <P>
 	  <b>Divide by zero</b>
+</P>
 <P>
 You have attempted to divide by zero. This is a mathematical error
+</P>
 <P>
 	  <b>Negative logarithm</b>
+</P>
 <P>
 You have attempted to take the logarithm of zero or a negative number. 
 This is a mathematical error.
+</P>
 <P>
 	  <b>Negative square root</b>
+</P>
 <P>
 You have tried to take the square root of a negative number. This is 
 a mathematical error
+</P>
 <P>
 	<b>Sine or Cosine out of range</b>
 <P>
-You have attempted to pass a value not in the range –1.0 to 1.0 to 
-the ASIN() or ACOS() functions. 
+You have attempted to pass a value not in the range -1.0 to 1.0 to
+the ASIN() or ACOS() functions.
+</P>
 <P>
 	  <b>End of input file</b>
+</P>
 <P>
 An INPUT statement has encountered an end of file condition. This 
-could be due to some problem with the computer’s system.
+could be due to some problem with the computer&apos;s system.
+</P>
 <P>
 	  <b>Illegal offset </b>
+</P>
 <P>
 A string function has received an illegal value for a string offset, 
 such as a negative second argument to LEFT$()
+</P>
 <P>
 	  <b>Type mismatch </b>
+</P>
 <P>
 You have entered a string expression where MiniBasic was expecting a 
 numeric expression, or a numeric expression where it was expecting a 
 string.
+</P>
 <P>
 	  <b>Input too long</b>
+</P>
 <P>
 Input lines can be a maximum of 1023 characters long. Lines longer 
 than this are almost certainly either errors or malicious attempts 
 to exploit the system, so they are rejected.
+</P>
 <P>
 	<b>Bad value</b>
+</P>
 <P>
 There has been an internal overflow. Usually this is caused by trying 
 to calculate with ridiculously large value like 10 trillion.
+</P>
 <P>
 	<b>Not an integer</b>
+</P>
 <P>
 A non-integer was used as an array index or to a function 
 ( like RND() ) which naturally expects an integer. Note that 
 floating point arithmetic is not exact so expressions like 
 SQRT(3.0) * SQRT(3.0) may not return exactly 3.0. Use the 
-INT() function to force a number to an exact integer. 
+INT() function to force a number to an exact integer.
+</P>
 <P> 
 	 <b> ERROR </b>
+</P>
+
 <P>
 Unspecified error has occurred. This probably represents some 
 internal problem. 
-<P>	  
-
+</P>
 
    </body>
 </html>

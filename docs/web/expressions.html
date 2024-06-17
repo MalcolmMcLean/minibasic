@@ -1,31 +1,43 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 
 <!-- Created on 29-Apr-2006 00:26:50 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic expressions
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+          <style>
+              BODY {
+                 background-color:#e0e0ff;
+                 width:50em;
+                 margin-left:5em;
+                 margin-bottom:5em;
+              }
+              </style>
    </head>
 
-   <body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+   <body>
 
       <H3> 1)	Expressions. </H3>
 
-All expressions are evaluated using floating-point arithmetic. 
 <P>
-The + and – operators have lower precedence than *, / and MOD (modulus),
+All expressions are evaluated using floating-point arithmetic.
+</P>
+<P>
+The + and - operators have lower precedence than *, / and MOD (modulus),
  which have equal precedence and are evaluated left to right. 
  ! (factorial) has the highest precedence. There is no exponentiation
   operator (use the POW() function instead).
+</P>
 <P>
-There are two mathematical constants, e, Euler’s number, 2.71281828,
+There are two mathematical constants, e, Euler&apos;s number, 2.71281828,
  and PI, 3.14159265.
+ </P>
 <P>
-It is possible to use variables or dimensioned variables in expressions. 
+It is possible to use variables or dimensioned variables in expressions.
+</P>
 <P>
 Typical expressions are <BR>
 <BR>
@@ -38,21 +50,24 @@ x                    - value of variable  x <BR>
 array(1,2)     - value of array element 1, 2 <BR>
 <BR>
 POW( x + y, 2) + array(1, LEN(A$))  - raise x + y to the power 2 and 
-add an element of the array “array” given by 1 and  the length of A$.
-<P>
+add an element of the array &quot;array&quot; given by 1 and  the length of A$.
+</P>
 
+<P>
 MOD calculates the floating point modulus of a number. Both sides of the
  expression should be of the same sign. x MOD 0 is an error. Division
   by zero is also an error.
+</P>
 <P>
 Floating point arithmetic is not exact, so expressions such as SQRT(2.0)
  * SQRT(2.0) may not be exactly whole numbers. Using the function 
  INT(x + 0.5) you can force an expression to be the nearest exact
   integer.
+  </P>
   <P>
- 
 Arrays are stored with the x dimension in the first column. This matters
  when initialising an 2d array with a list of values.
+ </P>
 <P>
 
 <code>
@@ -62,74 +77,88 @@ Arrays are stored with the x dimension in the first column. This matters
                        13, 14, 15, 16 <BR>
 </code>
 will create an ascending list in a(x,y) order.
+</P>
 <P>
 Array indices start from 1 and finish at the dimension size. 
 Thus a(1,1) is the first element of the array, and a(4.4) the highest.
+</P>
 <P>
 Note that there must be no space between an array name and the first 
 parenthesis.
-<P>
+</P>
  
 <H3> 2)	String expressions. </H3>
 <P>
 All strings are stored internally in ASCII format, as NUL-terminated 
 arrays. Use of extremely large strings is likely to slow down the 
 program, since most operations involve internal copying of strings.
+</P>
 <P>
 A string literal consists of one or more concatenated quotes. A string 
 can be spread over several lines, but the newline character is not 
 allowed inside quotes. To enclose a quotation mark in astring, use double 
 quotes.
-<P>
+</P>
 <code>
-10 LET A$ = “And God said “”Let there be light”” “ <BR>
-    “and there was light.” “And God saw the light, that it was good.” <BR>
+10 LET A$ = &quot;And God said &quot;&quot;Let there be light&quot;&quot; &quot; <BR>
+    &quot;and there was light.&quot; &quot;And God saw the light, that it was good.&quot; <BR>
 </code>
+<P>
 is an example of a legal string. Note that the start of the second line 
 contains white space at the beginning to tell the interpreter it is a 
 continuation of the previous line.
+</P>
 <P>
 To add a newline or other control character, use the CHR$() function. 
 Note that CHR$(0) will prematurely terminate the string. Use the ASCII() 
 function to perform numerical manipulation on characters.
+</P>
 <P>
+e.g.<code> LET B$ = CHR$( ASCII(B$) + 1) </code> will set B$ to the next
+letter of the alphabet.
+</P>
+<P>
+The + operator will concatenate strings.
+</P>
 
-e.g <code> LET B$ = CHR$( ASCII(B$) + 1) </code> will set B$ to the next 
-letter of the alphabet. 
-<P>
-The ‘+’ operator will concatenate strings.
 <P>
 <code>
-10 PRINT  “Fred” + “Bloggs” + CHR$(42) + x$ <BR>
+10 PRINT  &quot;Fred&quot; + &quot;Bloggs&quot; + CHR$(42) + x$ <BR>
 </code>
 Will print FredBloggs* followed by the contents of x$ 
 <BR>
-Functions with names ending in ‘$’ always return strings. Parentheses 
+Functions with names ending in &quot;$&quot; always return strings. Parentheses
 are not optional.   
 <BR>
+</P>
 
 <H3> 3)	Relational expressions. </H3>
 
+<P>
 Relational expressions are used only in IF ... THEN statements to 
 make conditional jumps.
+</P>
 <P>
 A relational expression evaluates to either true or false. The allowed 
-operators a =, &lt&gt (doesn’t equal), &gt, &gt=, &lt, &lt=.
+operators a =, &lt;&gt; (doesn&apos;t equal), &gt;, &gt;=, &lt;, &lt;=.
+</P>
 <P>
 With expressions the comparison is numerical, and with strings it is 
 alphabetical. Both sides of a relational operator must be of the same 
 type.
+</P>
 <P>
 Relational expressions can contain the keywords AND and OR. Order of 
 evaluation is left to right, but parentheses should always be used to 
 disambiguate mixed expressions.
+</P>
 <P>
 Examples of use <BR>
 <BR>
 <code>
-10 IF (x &lt= 5  AND x &gt 0) OR x = 10 THEN 100 <BR> 
+10 IF (x &lt;= 5  AND x &gt; 0) OR x = 10 THEN 100 <BR>
 </code>
-
+</P>
 
    </body>
 </html>

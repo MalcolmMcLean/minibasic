@@ -1,20 +1,27 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 
 <!-- Created on 29-Apr-2006 10:37:39 -->
 
-<html>
+<html lang="en">
    <head>
       <title>
          MiniBasic design
       </title>
-      <meta name="GENERATOR" content="Arachnophilia 5.2">
-      <meta name="FORMATTER" content="Arachnophilia 5.2">
+      <meta charset="UTF-8">
+    <style>
+        BODY {
+            background-color:#e0e0ff;
+            width:50em;
+            margin-left:5em;
+            
+        }
+    </style>
    </head>
 
-   <body bgcolor="#e0e0ff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
-	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt=""> </A>
+   <body>
+	<A href = "MiniBasicHome.html"> <img src="MBlogo.gif" width="107" height="39" alt="MIniBasic logo"> </A>
       <H2> The design of MiniBasic </H2>
-
+<P>
 MiniBasic is designed to allow non-programmers to add arbitrary 
 functions to programs. Imagine we are attempting to SPAM-shield 
 an email program. Different users have different ideas of what 
@@ -24,58 +31,65 @@ unless it is under a certain size, unless it has come from a
 trusted list of addresses, then we are stuck. However by 
 providing a MiniBasic interface, the user can input the relevant 
 values and provide the logic.
+</P>
 <P>
 The calling program would do this by setting up the input stream 
 with, say, the email address of the sender, the title of the 
 email, the length of any attachment.
+</P>
 <P>
 The calling program then presents half of a MiniBasic program 
-to the user, with the input set up
-<P>
-eg <BR>
+to the user, with the input set up <BR><BR>
+e.g. <BR>
+</P>
 <code>
 10 REM SPAM filter <BR>
-20 REM sender’s email <BR>
+20 REM sender&apos;s email <BR>
 30 INPUT address$ <BR>
 40 REM tile of email <BR>
 50 INPUT title$ <BR>
 60 REM length of attachment <BR>
 70 INPUT attachlen <BR> 
-80 REM PRINT “Accept” to accept the email or “Reject” to reject <BR>
+80 REM PRINT &quot;&apos;Accept&apos; to accept the email or &apos;Reject&apos; to reject&quot; <BR>
 </code>
 <P>
 The user then provides the logic for his choice.
+</P>
 <P>
-
 MiniBasic can of course also be used as a stand-alone console 
 programming language. This is useful for teaching purposes, for 
 testing MiniBasic programs, or if you simply want to write a 
-“filter” program that accepts from standard input and writes to 
+<I>filter</I> program that accepts from standard input and writes to
 standard output.
+</P>
 <P>
 It was important that MiniBasic be simple to learn, and simple to 
 implement. For this reason the syntax of the language has been kept 
 as close as possible to the type of BASIC used on microcomputers 
 in the 1980s. Millions of people know a BASIC of this kind.
+</P>
 <P>
 Because of advances in computer power since the 1980s array 
 initialisation was allowed. This allows us to eliminate the 
 difficult to use READ and DATA statements. Re-dimensioning 
 of arrays was also allowed, largely for theoretical reasons 
 (it turns MiniBasic into a Turing machine).
+</P>
 <P>
 GOSUB was not included. It is not of much practical use without 
-local variables and parameters, and a functional language isn’t 
+local variables and parameters, and a functional language isn&apos;t
 very useful without some mechanism for passing and returning 
 vectors. Adding these would have complicated the design of the 
 interpreter considerably, and moved the language away from 
 original BASIC.
+</P>
 <P>
 PEEK and POKE are obviously hardware-dependent, add potential 
 security risks, and were also not included.
+</P>
 <P>
 The C-language source to MiniBasic is included. The interface is
-<P>
+</P>
 <code>
 int basic(const char *script, FILE *in, FILE *out, FILE *err)
 </code>
@@ -84,14 +98,17 @@ In the standalone program these are called with stdin, stdout, stderr.
 In a component environment, these will usually be temporary memory 
 files, and the input will be set up with the parameters to the function 
 the user is to write.
+</P>
 <P>
 The function returns 0 on success or non-zero on failure. 
+</P>
 <P>
 The source code is portable ANSI C. With the exception of the CHR$() 
 and ASCII() functions, which rely on the execution character set 
 being ASCII. The relational operators for strings also call the 
 function strcmp() internally, which may have implications on 
 non-ASCII systems.
+</P>
 <P>
 An interpreted language is obviously not a particularly efficient 
 way of running functions. Variables are stored in linear lists, 
@@ -105,24 +122,28 @@ All MiniBasic keywords, with the exception of e, start with
 uppercase letters. This fact is exploited to allow faster 
 recognition of identifiers starting with lower case. Users can 
 use this feature to gain some performance advantage. 
+</P>
 <P>
-On a fast computer the efficiency of MiniBasic shouldn’t be a 
+On a fast computer the efficiency of MiniBasic shouldn&apos;t be a
 major problem unless users run very processor-intensive scripts, 
 or if the function is in a time-critical portion of code. In 
 these cases the answer would be to move to a pseudo-compiler system, 
 where the MiniBasic scripts are translated into an intermediate 
 bytecode that is similar to machine language. This is a project 
 for a later date.
+</P>
 <P>
 Since MiniBasic is available as C source, it is possible to extend 
 the language. Where possible extensions should be in the form of 
 functions rather than new statements, to avoid changing the grammar 
 of the language. To add a numerical function, foo, which takes a 
 numerical and a string argument, write the function like this
+</P>
 <P>
-foo – check the first character of a string  FOO(85, “Useless function”)
-<P>
-<code> <pre>
+foo - check the first character of a string  FOO(85, &quot;Useless function&quot;)
+</P>
+<code>
+    
 double foo(void)
 {
   double answer;
@@ -138,9 +159,9 @@ double foo(void)
   match(CPAREN); /* match close */
   if(str == NULL) /* computer can run out of memory */
   return 0;           /* stringexpr() will have signalled the error so no point in generating another */
-  ch = integer(x); /* signal error if x isn’t an integer */
+  ch = integer(x); /* signal error if x isn&apos;t an integer */
   if( !isalpha(ch) )
-    seterror(ERR_BADVALUE); /* signal an error of your if ch isn’t  valid */
+    seterror(ERR_BADVALUE); /* signal an error of your if ch isn&apos;t  valid */
 
   if(str[0] == ch)         /* function logic */
     answer = 1.0;
@@ -151,19 +172,21 @@ double foo(void)
  return answer;
 }  
 
-</pre> </code>
+</code>
 <P>
 Once you have your function, add an identifier for it, FOO, to the 
 token list. Then to the functions gettoken() and tokenlen() add the 
 appropriate lines. Finally to the function factor() add the code 
 for calling your function.
+</P>
 <P>
 For string functions, the procedure is similar, except that they 
 must return an allocated string. The convention is that they end 
 with a dollar sign, and the token id ends with the sequence 
-“STRING”. Add the call to the function stringexpr(), and add 
+<I>STRING</I>. Add the call to the function stringexpr(), and add
 your symbol to the function isstring() so that statements like 
 PRINT know that it generates a string expression.
+</P>
 <P>
 To change the input and output model, you need only change the 
 functions doprint() and doinput(). If you wish to change the 
@@ -172,7 +195,7 @@ reporterror() and the top-level function basic(). Currently
 the program takes FILE pointers, which should be flexible 
 enough for most uses, but not if say you want to provide for 
 interactive scripts.
-<P>
+</P>
 
    </body>
 </html>
